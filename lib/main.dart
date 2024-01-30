@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:modul_5/ui_1/main.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,6 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'HomeWork 5',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -32,7 +34,9 @@ int screenIndex = 0;
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    List<Widget> screens = [];
+    List<Widget> screens = [
+      const MyAppUi1(),
+    ];
     return Scaffold(
       floatingActionButton: FloatingActionButton(onPressed: () {
         if (screenIndex + 1 < screens.length) {
