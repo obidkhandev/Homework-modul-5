@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:modul_5/ui_1/data/data_sources/servises/auth/auth_service.dart';
 import 'package:modul_5/ui_1/presentation/components/my_button.dart';
 import 'package:modul_5/ui_1/presentation/components/my_text_field.dart';
+import 'package:provider/provider.dart';
 
 class LoginPageUi1 extends StatefulWidget {
-  final Function()? onTap;
-  const LoginPageUi1({super.key, this.onTap});
+  final Function() onTap;
+  const LoginPageUi1({super.key, required this.onTap});
 
   @override
   State<LoginPageUi1> createState() => _LoginPageUi1State();
@@ -13,7 +15,27 @@ class LoginPageUi1 extends StatefulWidget {
 class _LoginPageUi1State extends State<LoginPageUi1> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
-  void singIn() {}
+
+  // sing in user
+  void singIn() async {
+    // get the auth service
+    final authService = Provider.of<AuthServiceUi1>(context, listen: false);
+
+    try {
+      await authService.singInWithEmailandPassword(
+          emailController.text, passwordController.text);
+    } catch (e) {
+      // ignore: use_build_context_synchronously
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            e.toString(),
+          ),
+        ),
+      );
+      print(e);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {

@@ -1,8 +1,19 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:modul_5/ui_1/data/data_sources/servises/auth/auth_service.dart';
+import 'package:modul_5/ui_1/firebase_options.dart';
 import 'package:modul_5/ui_1/main.dart';
+import 'package:provider/provider.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  runApp(
+    ChangeNotifierProvider(
+      create: (context)=> AuthServiceUi1(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -38,13 +49,14 @@ class _MyHomePageState extends State<MyHomePage> {
       const MyAppUi1(),
     ];
     return Scaffold(
-      floatingActionButton: FloatingActionButton(onPressed: () {
-        if (screenIndex + 1 < screens.length) {
-          screenIndex++;
-          setState(() {});
-        }
-      },
-      child: const Icon(Icons.next_plan),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          if (screenIndex + 1 < screens.length) {
+            screenIndex++;
+            setState(() {});
+          }
+        },
+        child: const Icon(Icons.next_plan),
       ),
       body: screens[screenIndex],
     );
