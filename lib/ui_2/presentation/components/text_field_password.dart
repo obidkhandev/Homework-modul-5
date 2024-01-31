@@ -22,7 +22,7 @@ class PasswordTextField extends StatelessWidget {
           child: MyDashedContainer(),
         ),
         labelText: text,
-        labelStyle: TextStyle(color: Colors.grey),
+        labelStyle: const TextStyle(color: Colors.grey),
       ),
     );
   }

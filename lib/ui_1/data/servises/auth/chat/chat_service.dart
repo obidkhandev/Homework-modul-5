@@ -21,7 +21,8 @@ class ChatServiceUi1 extends ChangeNotifier {
         receiverId: receiverId,
         senderEmail: currentUserEmail,
         message: message,
-        timestamp: timestamp);
+        timestamp: timestamp
+      );
 
     //construct chat room id from current user id and receiver id (sorted to ensure uniquess)
     List<String> ids = [currentUserId, receiverId];

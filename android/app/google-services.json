@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "1022068529628",
-    "project_id": "chat-app-57b70",
-    "storage_bucket": "chat-app-57b70.appspot.com"
+    "project_number": "934836649691",
+    "project_id": "homework---2",
+    "storage_bucket": "homework---2.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1022068529628:android:f7d3336ed93bcbfb6c9719",
+        "mobilesdk_app_id": "1:934836649691:android:aefa8bc6bcf52b1837d6fe",
         "android_client_info": {
           "package_name": "com.example.modul_5"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyA7eZvnjMbmSS7xdAJKzSSt0bAECKKVcTk"
+          "current_key": "AIzaSyCm3A6hrWKJ4zX73HE7F4UkS9MHHNrlsk0"
         }
       ],
       "services": {
