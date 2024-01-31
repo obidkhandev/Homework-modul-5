@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:modul_5/ui_1/data/data_sources/servises/auth/auth_service.dart';
+import 'package:modul_5/ui_1/data/servises/auth/auth_service.dart';
 import 'package:modul_5/ui_1/presentation/pages/chat_page.dart';
 import 'package:provider/provider.dart';
 

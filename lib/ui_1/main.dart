@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:modul_5/ui_1/data/data_sources/servises/auth/auth_gate.dart';
+import 'package:modul_5/ui_1/data/servises/auth/auth_gate.dart';
 
 class MyAppUi1 extends StatelessWidget {
   const MyAppUi1({super.key});

@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:modul_5/ui_1/data/data_sources/servises/auth/login_or_register.dart';
+import 'package:modul_5/ui_1/data/servises/auth/login_or_register.dart';
 import 'package:modul_5/ui_1/presentation/pages/home_page.dart';
 
 class AuthGateUi1 extends StatelessWidget {
