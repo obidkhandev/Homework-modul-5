@@ -49,15 +49,16 @@ class _MyHomePageState extends State<MyHomePage> {
       const MyAppUi1(),
     ];
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          if (screenIndex + 1 < screens.length) {
-            screenIndex++;
-            setState(() {});
-          }
-        },
-        child: const Icon(Icons.next_plan),
-      ),
+      // floatingActionButton: FloatingActionButton(
+        
+      //   onPressed: () {
+      //     if (screenIndex + 1 < screens.length) {
+      //       screenIndex++;
+      //       setState(() {});
+      //     }
+      //   },
+      //   child: const Icon(Icons.next_plan),
+      // ),
       body: screens[screenIndex],
     );
   }
