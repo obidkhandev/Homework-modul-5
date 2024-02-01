@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:modul_5/ui_2/data/services/auth/auth_service.dart';
 import 'package:modul_5/ui_2/presentation/components/my_button.dart';
 import 'package:modul_5/ui_2/presentation/components/my_divider.dart';
 import 'package:modul_5/ui_2/presentation/components/my_rich_text.dart';
@@ -6,6 +7,7 @@ import 'package:modul_5/ui_2/presentation/components/social_media.dart';
 import 'package:modul_5/ui_2/presentation/components/text_field_email.dart';
 import 'package:modul_5/ui_2/presentation/components/text_field_password.dart';
 import 'package:modul_5/ui_2/presentation/components/backround.dart';
+import 'package:provider/provider.dart';
 
 class SingUpUi2 extends StatefulWidget {
   final Function() onTap;
@@ -21,7 +23,25 @@ class _SignUpUi2State extends State<SingUpUi2> {
   final nameController = TextEditingController();
   final numberController = TextEditingController();
 
-  void singUp() {}
+  void signUp() async {
+
+    // get auth service
+    final authService = Provider.of<AuthServiceUi2>(context, listen: false);
+    try {
+      await authService.singUpWithEmailandPassword(
+        emailController.text,
+        passwordController.text,
+      );
+      
+    } catch (e) {
+      // ignore: use_build_context_synchronously
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(e.toString(),),
+        ),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +91,7 @@ class _SignUpUi2State extends State<SingUpUi2> {
             PasswordTextField(passwordController: passwordController),
             
             const SizedBox(height: 15),
-            const MyButtonUi2(text: "Sign Up"),
+            MyButtonUi2(text: "Sign Up",onTap: signUp,),
             const SizedBox(height: 10),
             MyRichTextUi2(
               firstText: "Already have an ",

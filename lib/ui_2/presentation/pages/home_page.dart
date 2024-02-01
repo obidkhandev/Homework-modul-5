@@ -22,7 +22,7 @@ class _HomePageUi2State extends State<HomePageUi2> {
       appBar: AppBar(
         title: const Text("Home Page"),
         actions: [
-          IconButton(onPressed: signOut, icon: Icon(Icons.logout),color: Colors.grey,),
+          IconButton(onPressed: signOut, icon: const Icon(Icons.logout),color: Colors.grey,),
         ],
       ),
     );
