@@ -31,8 +31,9 @@ class _SignUpUi2State extends State<SingUpUi2> {
       await authService.singUpWithEmailandPassword(
         emailController.text,
         passwordController.text,
+        nameController.text,
+        numberController.text,
       );
-      
     } catch (e) {
       // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
