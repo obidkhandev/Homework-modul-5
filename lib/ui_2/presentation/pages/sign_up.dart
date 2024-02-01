@@ -71,7 +71,7 @@ class _SignUpUi2State extends State<SingUpUi2> {
             PasswordTextField(passwordController: passwordController),
             
             const SizedBox(height: 15),
-            const MyButtonUi2(text: "Login"),
+            const MyButtonUi2(text: "Sign Up"),
             const SizedBox(height: 10),
             MyRichTextUi2(
               firstText: "Already have an ",
@@ -82,12 +82,12 @@ class _SignUpUi2State extends State<SingUpUi2> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                MyDivider(width: size.width / 3),
+                MyDivider(width: size.width / 3 - 5),
                 const Text(
                   "Or Sign up with",
                   style: TextStyle(color: Colors.white),
                 ),
-                MyDivider(width: size.width / 3),
+                MyDivider(width: size.width / 3 - 5),
               ],
             ),
             SizedBox(height: size.height * 0.05),

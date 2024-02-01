@@ -10,7 +10,7 @@ class BackgroundUi2 extends StatelessWidget {
     return Container(
       height: size.height,
       width: double.infinity,
-      padding: const EdgeInsets.only(left: 18, right: 18, top: 20),
+      padding: const EdgeInsets.only(left: 16, right: 16, top: 20),
       decoration: const BoxDecoration(
         color: Color.fromRGBO(0, 6, 28, 1),
         image: DecorationImage(

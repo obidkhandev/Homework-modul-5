@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:modul_5/ui_2/data/services/auth/auth_service.dart';
 import 'package:modul_5/ui_2/presentation/components/components.dart';
 import 'package:modul_5/ui_2/presentation/components/my_button.dart';
 import 'package:modul_5/ui_2/presentation/components/my_divider.dart';
@@ -8,6 +9,7 @@ import 'package:modul_5/ui_2/presentation/components/text_field_email.dart';
 import 'package:modul_5/ui_2/presentation/components/text_field_password.dart';
 import 'package:modul_5/ui_2/presentation/components/backround.dart';
 import 'package:modul_5/ui_2/presentation/pages/password_recovery_page.dart';
+import 'package:provider/provider.dart';
 
 class LoginPageUi2 extends StatefulWidget {
   final Function() onTap;
@@ -20,10 +22,25 @@ class LoginPageUi2 extends StatefulWidget {
 class _LoginPageUi2State extends State<LoginPageUi2> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
-
-  void singIng() {}
-
   bool checkBox = false;
+  
+  void singIng() async {
+    final authService = Provider.of<AuthServiceUi2>(context, listen: false);
+
+    try {
+      await authService.singInWithEmailandPassword(
+          emailController.text, passwordController.text);
+    } catch (error) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            error.toString(),
+          ),
+        ),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -112,7 +129,7 @@ class _LoginPageUi2State extends State<LoginPageUi2> {
               ],
             ),
             const SizedBox(height: 30),
-            const MyButtonUi2(text: "Login"),
+            MyButtonUi2(text: "Login",onTap: singIng,),
             const SizedBox(height: 10),
             MyRichTextUi2(
               firstText: "Don't have an account? ",
