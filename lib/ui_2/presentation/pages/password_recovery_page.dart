@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:modul_5/ui_2/presentation/components/backround.dart';
 import 'package:modul_5/ui_2/presentation/components/my_button.dart';
 import 'package:modul_5/ui_2/presentation/components/text_field_email.dart';
-import 'package:modul_5/ui_2/presentation/pages/change_passwort.dart';
 
 class PasswordRecoveryUi2 extends StatefulWidget {
   const PasswordRecoveryUi2({super.key});
@@ -13,6 +12,16 @@ class PasswordRecoveryUi2 extends StatefulWidget {
 
 class _PasswordRecoveryUi2State extends State<PasswordRecoveryUi2> {
   final emailController = TextEditingController();
+
+  // final FirebaseAuth _auth = FirebaseAuth.instance;
+  // Future<void> sendEmail() async {
+  //   // User? user = _auth.currentUser;
+
+  //   // if (emailController.text != "") {
+  //   //   await _auth.checkActionCode("12345hello");
+  //   //   await _auth.applyActionCode("12345hello");
+  //   // }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -64,14 +73,15 @@ class _PasswordRecoveryUi2State extends State<PasswordRecoveryUi2> {
             MyButtonUi2(
               text: "Send Code",
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const ChangePasswordUi2();
-                    },
-                  ),
-                );
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //     builder: (context) {
+                //       return const ChangePasswordUi2();
+                //     },
+                //   ),
+                // );
+                // sendResetPassword();
               },
             ),
             const SizedBox(height: 30),

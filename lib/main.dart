@@ -10,7 +10,7 @@ void main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(
     ChangeNotifierProvider(
-      create: (context)=> AuthServiceUi1(),
+      create: (context) => AuthServiceUi1(),
       child: const MyApp(),
     ),
   );
@@ -49,7 +49,6 @@ class _MyHomePageState extends State<MyHomePage> {
       const MyAppUi1(),
     ];
     return Scaffold(
-      
       body: screens[screenIndex],
     );
   }

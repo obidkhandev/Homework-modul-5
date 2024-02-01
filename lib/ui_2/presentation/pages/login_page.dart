@@ -31,6 +31,7 @@ class _LoginPageUi2State extends State<LoginPageUi2> {
       await authService.singInWithEmailandPassword(
           emailController.text, passwordController.text);
     } catch (error) {
+      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(

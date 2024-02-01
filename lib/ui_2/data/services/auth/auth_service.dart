@@ -45,7 +45,7 @@ class AuthServiceUi2 extends ChangeNotifier {
       _firestore.collection("users").doc(userCredential.user!.uid).set({
         "uid": userCredential.user!.uid,
         "email": email,
-        "name":name,
+        "name": name,
         "phoneNumber": phoneNumber
       });
       return userCredential;
@@ -53,6 +53,8 @@ class AuthServiceUi2 extends ChangeNotifier {
       throw Exception(e.code);
     }
   }
+
+  
 
   // sign user out
   Future<void> signOut() async {
